@@ -15,14 +15,14 @@ class ReplaceTernaryAssignment(Rule):
             ),
             body=[
                 ast.Assign(
-                    targets=[node.value.test.left],
+                    targets=node.targets,
                     value=node.value.body,
                     lineno=None,
                 )
             ],
             orelse=[
                 ast.Assign(
-                    targets=[node.value.test.left],
+                    targets=node.targets,
                     value=node.value.orelse,
                     lineno=None,
                 )
